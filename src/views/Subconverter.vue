@@ -534,7 +534,7 @@ export default {
       }
 
       let backend =
-        this.form.customBackend === ""
+        this.form.backendOptions === ""
           ? defaultBackend
           : this.form.backendOptions;
 
