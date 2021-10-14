@@ -62,13 +62,19 @@
                     placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
                     style="width: 100%"
                   >
-                    <el-option
-                      v-for="item in options.backendOptions"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value"
-                    ></el-option>
-                    <el-button slot="append" @click="gotobackendOptions" icon="el-icon-link">配置示例</el-button>
+                    <el-option-group
+                      v-for="group in options.backendOptions"
+                      :key="group.label"
+                      :label="group.label"
+                    >
+                      <el-option
+                        v-for="item in group.options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                      ></el-option>
+                    </el-option-group>
+                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-select>
                 </el-form-item>
                 <el-form-item label="Include:">
