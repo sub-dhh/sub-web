@@ -37,7 +37,7 @@
                     allow-create
                     filterable
                     clearable
-                    placeholder="请选择，不选择则使用后端接口提供的配置"
+                    placeholder="请选择，不选择则使用后端接口提供的默认配置"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -62,7 +62,7 @@
                     allow-create
                     filterable
                     clearable
-                    placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
+                    placeholder="请选择，不选择则使用托管在heroku的默认后端"
                     style="width: 100%"
                   >
                     <el-option
@@ -71,8 +71,8 @@
                       :label="item.label"
                       :value="item.value"
                     >
-                      <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                     </el-option>
+                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-select>
                 </el-form-item>
                 <el-form-item label="Include:">
@@ -268,15 +268,15 @@ export default {
         },
         backendOptions: [
           { 
+            label: "api-paoche.herokuapp.com（默认后端，托管在heroku）",
+            value: "http://api-paoche.herokuapp.com/sub?"
+          },
+          { 
             label: "127.0.0.1:25500（使用者自建本地后端）",
             value: "http://127.0.0.1:25500/sub?"
           },
           { 
-            label: "api-paoche.herokuapp.com（托管在heroku）",
-            value: "http://api-paoche.herokuapp.com/sub?"
-          },
-          { 
-            label: "api.paoche.gq（跑车机场用户山寨后端）",
+            label: "api.paoche.gq（跑车机场用户娱乐后端）",
             value: "https://api.paoche.gq/sub?"
           },
           { 
