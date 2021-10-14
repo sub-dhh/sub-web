@@ -535,8 +535,8 @@ export default {
 
       let backend =
         this.form.customBackend === ""
-          ? backendOptions
-          : this.form.customBackend;
+          ? defaultBackend
+          : this.form.backendOptions;
 
       let sourceSub = this.form.sourceSubUrl;
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
