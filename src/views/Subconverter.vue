@@ -31,16 +31,6 @@
               </el-form-item>
 
               <div v-if="advanced === '2'">
-                <el-form-item label="后端地址:">
-                  <el-autocomplete
-                    style="width: 100%"
-                    v-model="form.customBackend"
-                    :fetch-suggestions="backendSearch"
-                    placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
-                  >
-                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
-                  </el-autocomplete>
-                </el-form-item>
                 <el-form-item label="远程配置:">
                   <el-select
                     v-model="form.remoteConfig"
@@ -62,6 +52,29 @@
                       ></el-option>
                     </el-option-group>
                     <el-button slot="append" @click="gotoRemoteConfig" icon="el-icon-link">配置示例</el-button>
+                  </el-select>
+                </el-form-item>
+                <el-form-item label="后端地址:">
+                  <el-select
+                    v-model="form.backendOptions"
+                    allow-create
+                    filterable
+                    placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
+                    style="width: 100%"
+                  >
+                    <el-option-group
+                      v-for="group in options.backendOptions"
+                      :key="group.label"
+                      :label="group.label"
+                    >
+                      <el-option
+                        v-for="item in group.options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                      ></el-option>
+                    </el-option-group>
+                    <el-button slot="append" @click="gotobackendOptions" icon="el-icon-link">配置示例</el-button>
                   </el-select>
                 </el-form-item>
                 <el-form-item label="Include:">
@@ -397,7 +410,7 @@ export default {
             ]
           },
           {
-            label: "universal",
+            label: "SleepyHeeead",
             options: [
               {
                 label: "No-Urltest",
@@ -408,12 +421,7 @@ export default {
                 label: "Urltest",
                 value:
                   "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/universal/urltest.ini"
-              }
-            ]
-          },
-          {
-            label: "Special",
-            options: [
+              },
               {
                 label: "NeteaseUnblock(仅规则，No-Urltest)",
                 value:
