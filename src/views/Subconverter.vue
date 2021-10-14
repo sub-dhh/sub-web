@@ -36,7 +36,6 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
-                    placeholder="form.remoteConfig"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -59,7 +58,6 @@
                     v-model="form.backendOptions"
                     allow-create
                     filterable
-                    placeholder="form.backendOptions"
                     style="width: 100%"
                   >
                     <el-option
