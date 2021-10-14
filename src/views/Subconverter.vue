@@ -36,7 +36,7 @@
                     style="width: 100%"
                     v-model="form.customBackend"
                     :fetch-suggestions="backendSearch"
-                    placeholder="默认使用api-paoche.herokuapp.com"
+                    placeholder="默认使用heroku后端"
                   >
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
@@ -266,19 +266,19 @@ export default {
           },
           { 
             label: "api.durgan.top（跑车机场用户个人提供）",
-            value: "http://api.durgan.top/sub?"
+            value: "https://api.durgan.top/sub?"
           },
           { 
             label: "api.wcc.best（订阅转换前端作者提供）",
-            value: "http://api.wcc.best/sub?"
+            value: "https://api.wcc.best/sub?"
           },
           { 
             label: "subcon.dlj.tf（订阅转换后端作者提供）",
-            value: "http://subcon.dlj.tf/sub?"
+            value: "https://subcon.dlj.tf/sub?"
           },
           { 
             label: "sub.id9.cc（品云测速频道提供）",
-            value: "http://sub.id9.cc/sub?"
+            value: "https://sub.id9.cc/sub?"
           }
         ],
         remoteConfig: [
