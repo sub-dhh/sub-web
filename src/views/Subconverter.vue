@@ -36,7 +36,7 @@
                     style="width: 100%"
                     v-model="form.customBackend"
                     :fetch-suggestions="backendSearch"
-                    placeholder="默认使用heroku后端"
+                    placeholder="动动小手，（建议）自行搭建后端服务。例：http://127.0.0.1:25500/sub?"
                   >
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
@@ -46,7 +46,7 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
-                    placeholder="默认使用后端接口配置"
+                    placeholder="请选择，不选则使用默认后端接口配置"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -259,10 +259,6 @@ export default {
           { 
             label: "127.0.0.1:25500（使用者自建本地后端）",
             value: "http://127.0.0.1:25500/sub?"
-          },
-          { 
-            label: "api-paoche.herokuapp.com（默认后端，托管在heroku，无需担心隐私，响应较慢）",
-            value: "https://api-paoche.herokuapp.com/sub?"
           },
           { 
             label: "api.durgan.top（跑车机场用户个人提供）",
