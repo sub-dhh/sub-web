@@ -67,8 +67,9 @@
                       :key="item.value"
                       :label="item.label"
                       :value="item.value"
-                    ></el-option>
-                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
+                    >
+                      <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
+                    </el-option>
                   </el-select>
                 </el-form-item>
                 <el-form-item label="Include:">
@@ -534,7 +535,7 @@ export default {
 
       let backend =
         this.form.customBackend === ""
-          ? defaultBackend
+          ? backendOptions
           : this.form.customBackend;
 
       let sourceSub = this.form.sourceSubUrl;
