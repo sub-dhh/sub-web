@@ -36,6 +36,7 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
+                    placeholder="请选择，不选择则使用后端接口提供的配置"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -55,9 +56,11 @@
                 </el-form-item>
                 <el-form-item label="后端地址:">
                   <el-select
-                    v-model="form.backendOptions"
+                    v-model="form.customBackend"
+                    :fetch-suggestions="backendSearch"
                     allow-create
                     filterable
+                    placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
                     style="width: 100%"
                   >
                     <el-option
@@ -532,9 +535,9 @@ export default {
       }
 
       let backend =
-        this.form.backendOptions === ""
+        this.form.customBackend === ""
           ? defaultBackend
-          : this.form.backendOptions;
+          : this.form.customBackend;
 
       let sourceSub = this.form.sourceSubUrl;
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
