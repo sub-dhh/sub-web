@@ -36,7 +36,7 @@
                     style="width: 100%"
                     v-model="form.customBackend"
                     :fetch-suggestions="backendSearch"
-                    placeholder="动动小手，（建议）自行搭建后端服务。例：http://127.0.0.1:25500/sub?"
+                    placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
                   >
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
@@ -46,7 +46,7 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
-                    placeholder="请选择，不选则使用默认后端接口配置"
+                    placeholder="请选择，不选择则使用托管在heroku的默认后端的配置"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -261,6 +261,10 @@ export default {
             value: "http://127.0.0.1:25500/sub?"
           },
           { 
+            label: "api-paoche.herokuapp.com（托管在heroku）",
+            value: "http://api-paoche.herokuapp.com/sub?"
+          },
+          { 
             label: "api.durgan.top（跑车机场用户个人提供）",
             value: "https://api.durgan.top/sub?"
           },
@@ -281,6 +285,41 @@ export default {
           {
             label: "ACL4SSR原版规则",
             options: [
+              {
+                label: "ACL4SSR",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR.ini"
+              },
+              {
+                label: "ACL4SSR_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_AdblockPlus.ini"
+              },
+              {
+                label: "ACL4SSR_NoAuto",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_NoAuto.ini"
+              },
+              {
+                label: "ACL4SSR_BackCN",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_BackCN.ini"
+              },
+              {
+                label: "ACL4SSR_WithChinaIp",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithChinaIp.ini"
+              },
+              {
+                label: "ACL4SSR_WithGFW",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithGFW.ini"
+              },
+              {
+                label: "ACL4SSR_WithChinaIp_WithGFW",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithChinaIp_WithGFW.ini"
+              },
               {
                 label: "ACL4SSR_Online",
                 value:
@@ -330,42 +369,7 @@ export default {
                 label: "ACL4SSR_Online_Mini_NoAuto",
                 value:
                   "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_NoAuto.ini"
-              },
-              {
-                label: "ACL4SSR",
-                value:
-                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR.ini"
-              },
-              {
-                label: "ACL4SSR_AdblockPlus",
-                value:
-                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_AdblockPlus.ini"
-              },
-              {
-                label: "ACL4SSR_NoAuto",
-                value:
-                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_NoAuto.ini"
-              },
-              {
-                label: "ACL4SSR_BackCN",
-                value:
-                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_BackCN.ini"
-              },
-              {
-                label: "ACL4SSR_WithChinaIp",
-                value:
-                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithChinaIp.ini"
-              },
-              {
-                label: "ACL4SSR_WithGFW",
-                value:
-                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithGFW.ini"
-              },
-              {
-                label: "ACL4SSR_WithChinaIp_WithGFW",
-                value:
-                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithChinaIp_WithGFW.ini"
-              }              
+              }
             ]
           },
           {
