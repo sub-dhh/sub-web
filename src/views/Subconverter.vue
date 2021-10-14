@@ -265,6 +265,10 @@ export default {
             value: "http://api-paoche.herokuapp.com/sub?"
           },
           { 
+            label: "api.paoche.gq（跑车机场用户山寨后端）",
+            value: "https://api.paoche.gq/sub?"
+          },
+          { 
             label: "api.durgan.top（跑车机场用户个人提供）",
             value: "https://api.durgan.top/sub?"
           },
@@ -282,6 +286,26 @@ export default {
           }
         ],
         remoteConfig: [
+          {
+            label: "跑车机场用户个性定制，可提要求增加专属配置",
+            options: [
+              {
+                label: "ACL4SSR_Online",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_NoAuto",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
+              }              
+            ]
+          },
           {
             label: "ACL4SSR原版规则",
             options: [
@@ -373,26 +397,6 @@ export default {
             ]
           },
           {
-            label: "ACL4SSR跑车机场用户个性定制",
-            options: [
-              {
-                label: "ACL4SSR_Online",
-                value:
-                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
-              },
-              {
-                label: "ACL4SSR_Online_Full_AdblockPlus",
-                value:
-                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
-              },
-              {
-                label: "ACL4SSR_Online_Full_NoAuto",
-                value:
-                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
-              }              
-            ]
-          },
-          {
             label: "universal",
             options: [
               {
@@ -404,51 +408,6 @@ export default {
                 label: "Urltest",
                 value:
                   "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/universal/urltest.ini"
-              }
-            ]
-          },
-          {
-            label: "customized",
-            options: [
-              {
-                label: "Maying",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/maying.ini"
-              },
-              {
-                label: "Ytoo",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ytoo.ini"
-              },
-              {
-                label: "FlowerCloud",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/flowercloud.ini"
-              },
-              {
-                label: "NyanCAT",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/nyancat.ini"
-              },
-              {
-                label: "Nexitally",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/nexitally.ini"
-              },
-              {
-                label: "SoCloud",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/socloud.ini"
-              },
-              {
-                label: "ARK",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ark.ini"
-              },
-              {
-                label: "ssrCloud",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ssrcloud.ini"
               }
             ]
           },
@@ -514,7 +473,7 @@ export default {
     };
   },
   created() {
-    document.title = "Subscription Converter";
+    document.title = "跑车机场订阅转换";
     this.isPC = this.$getOS().isPc;
 
     // 获取 url cache
