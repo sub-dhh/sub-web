@@ -36,7 +36,7 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
-                    placeholder="请选择，不选择则使用后端接口提供的默认配置"
+                    placeholder="form.remoteConfig"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -59,7 +59,7 @@
                     v-model="form.backendOptions"
                     allow-create
                     filterable
-                    placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
+                    placeholder="form.backendOptions"
                     style="width: 100%"
                   >
                     <el-option
