@@ -4,7 +4,7 @@
       <el-col>
         <el-card>
           <div slot="header">
-            Subscription Converter
+            跑车机场订阅转换
             <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" />
 
             <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
@@ -36,7 +36,7 @@
                     style="width: 100%"
                     v-model="form.customBackend"
                     :fetch-suggestions="backendSearch"
-                    placeholder="动动小手，（建议）自行搭建后端服务。例：http://127.0.0.1:25500/sub?"
+                    placeholder="默认使用api-paoche.herokuapp.com"
                   >
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
@@ -46,7 +46,7 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
-                    placeholder="请选择"
+                    placeholder="默认使用后端接口配置"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -255,8 +255,143 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        backendOptions: [{ value: "http://127.0.0.1:25500/sub?" }],
+        backendOptions: [
+          { 
+            label: "127.0.0.1:25500（使用者自建本地后端）",
+            value: "http://127.0.0.1:25500/sub?"
+          },
+          { 
+            label: "api-paoche.herokuapp.com（默认后端，托管在heroku，无需担心隐私，响应较慢）",
+            value: "https://api-paoche.herokuapp.com/sub?"
+          },
+          { 
+            label: "api.durgan.top（跑车机场用户个人提供）",
+            value: "http://api.durgan.top/sub?"
+          },
+          { 
+            label: "api.wcc.best（订阅转换前端作者提供）",
+            value: "http://api.wcc.best/sub?"
+          },
+          { 
+            label: "subcon.dlj.tf（订阅转换后端作者提供）",
+            value: "http://subcon.dlj.tf/sub?"
+          },
+          { 
+            label: "sub.id9.cc（品云测速频道提供）",
+            value: "http://sub.id9.cc/sub?"
+          }
+        ],
         remoteConfig: [
+          {
+            label: "ACL4SSR原版规则",
+            options: [
+              {
+                label: "ACL4SSR_Online",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+              },
+              {
+                label: "ACL4SSR_Online_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini"
+              },
+              {
+                label: "ACL4SSR_Online_NoAuto",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoAuto.ini"
+              },
+              {
+                label: "ACL4SSR_Online_NoReject",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoReject.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_NoAuto",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Mini",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Mini_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_AdblockPlus.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Mini_NoAuto",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_NoAuto.ini"
+              },
+              {
+                label: "ACL4SSR",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR.ini"
+              },
+              {
+                label: "ACL4SSR_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_AdblockPlus.ini"
+              },
+              {
+                label: "ACL4SSR_NoAuto",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_NoAuto.ini"
+              },
+              {
+                label: "ACL4SSR_BackCN",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_BackCN.ini"
+              },
+              {
+                label: "ACL4SSR_WithChinaIp",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithChinaIp.ini"
+              },
+              {
+                label: "ACL4SSR_WithGFW",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithGFW.ini"
+              },
+              {
+                label: "ACL4SSR_WithChinaIp_WithGFW",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_WithChinaIp_WithGFW.ini"
+              }              
+            ]
+          },
+          {
+            label: "ACL4SSR跑车机场用户个性定制",
+            options: [
+              {
+                label: "ACL4SSR_Online",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_NoAuto",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
+              }              
+            ]
+          },
           {
             label: "universal",
             options: [
