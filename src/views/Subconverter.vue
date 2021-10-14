@@ -36,6 +36,7 @@
                     v-model="form.remoteConfig"
                     allow-create
                     filterable
+                    clearable
                     placeholder="请选择，不选择则使用后端接口提供的配置"
                     style="width: 100%"
                   >
@@ -60,6 +61,7 @@
                     :fetch-suggestions="backendSearch"
                     allow-create
                     filterable
+                    clearable
                     placeholder="请选择，不选择则使用托管在heroku的默认后端，无需担忧隐私"
                     style="width: 100%"
                   >
