@@ -314,7 +314,12 @@ export default {
                 label: "ACL4SSR_Online_Full_NoAuto",
                 value:
                   "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
-              }              
+              },
+              {
+                label: "ACL4SSR_Online_Mini",
+                value:
+                  "https://raw.githubusercontent.com/jokerdreck/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"
+              }
             ]
           },
           {
