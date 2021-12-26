@@ -276,10 +276,6 @@ export default {
             value: "http://127.0.0.1:25500/sub?"
           },
           { 
-            label: "api.paoche.gq（跑车机场用户娱乐后端）",
-            value: "https://api.paoche.gq/sub?"
-          },
-          { 
             label: "api.durgan.top（跑车机场用户个人提供）",
             value: "https://api.durgan.top/sub?"
           },
