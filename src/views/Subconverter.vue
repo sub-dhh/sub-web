@@ -315,7 +315,17 @@ export default {
                 label: "ACL4SSR_Online_Mini",
                 value:
                   "https://raw.githubusercontent.com/jokerdreck/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"
-              }
+              },
+              {
+                label: "ACL4SSR_Online_Mini_AdblockPlus",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_AdblockPlus.ini"
+              },              
+              {
+                label: "ACL4SSR_Online_Full",
+                value:
+                  "https://raw.githubusercontent.com/DurganShelley/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full.ini"
+              } 
             ]
           },
           {
