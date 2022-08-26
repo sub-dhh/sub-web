@@ -37,7 +37,7 @@
                     allow-create
                     filterable
                     clearable
-                    placeholder="请选择，不选择则使用后端接口提供的默认配置"
+                    placeholder="请选择，不选择则使用后端接口默认配置"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -62,7 +62,7 @@
                     allow-create
                     filterable
                     clearable
-                    placeholder="请选择，不选择则使用托管在heroku的默认后端"
+                    placeholder="请选择，不选择则使用跑车机场专属后端"
                     style="width: 100%"
                   >
                     <el-option
@@ -268,8 +268,8 @@ export default {
         },
         backendOptions: [
           { 
-            label: "api-paoche.herokuapp.com（默认后端，托管在heroku）",
-            value: "http://api-paoche.herokuapp.com/sub?"
+            label: "api.paoche.ml（默认后端，跑车机场专属后端）",
+            value: "https://api.paoche.ml/sub?"
           },
           { 
             label: "127.0.0.1:25500（使用者自建本地后端）",
@@ -284,8 +284,8 @@ export default {
             value: "https://api.wcc.best/sub?"
           },
           { 
-            label: "subcon.dlj.tf（订阅转换后端作者提供）",
-            value: "https://subcon.dlj.tf/sub?"
+            label: "sub.xeton.dev（订阅转换后端作者提供）",
+            value: "https://sub.xeton.dev/sub?"
           },
           { 
             label: "sub.id9.cc（品云测速频道提供）",
@@ -294,7 +294,7 @@ export default {
         ],
         remoteConfig: [
           {
-            label: "跑车机场用户个性定制，可提要求增加专属配置",
+            label: "跑车机场用户专属定制，可提要求增加专属配置",
             options: [
               {
                 label: "ACL4SSR_Online",
