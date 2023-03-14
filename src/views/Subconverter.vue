@@ -268,8 +268,8 @@ export default {
         },
         backendOptions: [
           { 
-            label: "api.durgan.top（默认后端，机场专属）",
-            value: "https://api.durgan.top/sub?"
+            label: "api-dhh.durgan.top（默认后端，机场专属）",
+            value: "https://api-dhh.durgan.top/sub?"
           },
           { 
             label: "127.0.0.1:25500（使用者自建本地后端）",
