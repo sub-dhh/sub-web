@@ -4,7 +4,7 @@
       <el-col>
         <el-card>
           <div slot="header">
-            跑车机场订阅转换
+            大航海订阅转换
             <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" />
 
             <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
@@ -37,7 +37,7 @@
                     allow-create
                     filterable
                     clearable
-                    placeholder="请选择，不选择则使用后端接口默认配置"
+                    placeholder="请选择，不选择则使用后端默认配置"
                     style="width: 100%"
                   >
                     <el-option-group
@@ -62,7 +62,7 @@
                     allow-create
                     filterable
                     clearable
-                    placeholder="请选择，不选择则使用跑车机场专属后端"
+                    placeholder="请选择，不选择则使用机场专属后端"
                     style="width: 100%"
                   >
                     <el-option
@@ -268,16 +268,12 @@ export default {
         },
         backendOptions: [
           { 
-            label: "api.paoche.ml（默认后端，跑车机场专属后端）",
-            value: "https://api.paoche.ml/sub?"
+            label: "api.durgan.top（默认后端，机场专属）",
+            value: "https://api.durgan.top/sub?"
           },
           { 
             label: "127.0.0.1:25500（使用者自建本地后端）",
             value: "http://127.0.0.1:25500/sub?"
-          },
-          { 
-            label: "api.durgan.top（跑车机场用户个人提供）",
-            value: "https://api.durgan.top/sub?"
           },
           { 
             label: "api.wcc.best（订阅转换前端作者提供）",
@@ -294,7 +290,7 @@ export default {
         ],
         remoteConfig: [
           {
-            label: "跑车机场用户专属定制，可提要求增加专属配置",
+            label: "机场用户专属定制",
             options: [
               {
                 label: "ACL4SSR_Online",
@@ -490,7 +486,7 @@ export default {
     };
   },
   created() {
-    document.title = "跑车机场订阅转换";
+    document.title = "大航海订阅转换";
     this.isPC = this.$getOS().isPc;
 
     // 获取 url cache
